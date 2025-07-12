@@ -7,7 +7,7 @@ from empresa.empresa import PredictEmprestimo
 
 
 #model = pickle.load(open('C:\Users\costa.0515\OneDrive - UNICRED DO BRASIL\Pos-Graduacao-Python\05-PGDC-Projeto Integrador\Projeto_Integrador\model\lgbm_credit_risk_model.pkl','rb'))
-model = pickle.load(open(r'model\lgbm_credit_risk_model.pkl', 'rb'))
+model = pickle.load(open(r'model/lgbm_credit_risk_model.pkl', 'rb'))
 
 
 app = Flask(__name__)

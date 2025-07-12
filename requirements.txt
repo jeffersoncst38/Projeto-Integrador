@@ -1,0 +1,9 @@
+Flask==2.3.3
+lightgbm==4.1.0
+matplotlib==3.9.2         # mantenha se for usar gráficos
+numpy==1.26.4
+pandas==2.2.2
+requests==2.31.0
+scikit-learn==1.5.1
+scipy==1.13.1
+gunicorn==21.2.0

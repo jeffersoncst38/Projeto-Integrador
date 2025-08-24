@@ -1,117 +1,103 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Resultados da Análise de Dados</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Seu Nome — Página Pessoal</title>
+  <meta name="description" content="Portfólio, contatos e projetos de Seu Nome." />
   <style>
-    :root {
-      --bg: #ffffff;
-      --fg: #333333;
-      --muted: #6b7280;
-      --primary: #2c3e50;
-      --border: #e5e7eb;
-      --card: #fafafa;
-      --code: #f4f4f4;
+    :root{
+      --bg:#0f1220; --card:#171a2b; --text:#e6e8ef; --muted:#9aa3b2; --accent:#6ae3ff;
+      --link:#9cd2ff; --border:rgba(255,255,255,.08);
     }
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0;background:var(--bg);color:var(--text);font:16px/1.6 system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,"Helvetica Neue",Arial}
+    a{color:var(--link);text-decoration:none}
+    a:hover{text-decoration:underline}
+    .wrap{max-width:980px;margin:auto;padding:28px}
+    header{display:flex;gap:18px;align-items:center;margin:8px 0 24px}
+    header img{width:64px;height:64px;border-radius:50%;border:1px solid var(--border);object-fit:cover}
+    h1{font-size:1.9rem;margin:0}
+    .muted{color:var(--muted)}
+    .grid{display:grid;gap:16px}
+    @media(min-width:720px){ .grid{grid-template-columns:1.2fr .8fr} }
+    .card{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:18px}
+    h2{font-size:1.2rem;margin:0 0 8px}
+    ul{padding-left:18px;margin:8px 0}
+    li+li{margin-top:6px}
+    .tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
+    .tag{background:rgba(255,255,255,.06);border:1px solid var(--border);padding:4px 10px;border-radius:999px;font-size:.85rem}
+    footer{margin:28px 0 8px;text-align:center;color:var(--muted);font-size:.9rem}
+    /* bloco de código e imagens, como no seu snippet */
+    pre{background:#141729;border:1px solid var(--border);padding:14px;border-radius:10px;overflow:auto}
+    img.resp{max-width:100%;height:auto;display:block;margin:8px 0;border-radius:10px;border:1px solid var(--border)}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <!-- Coloque um avatar em assets/avatar.jpg se quiser -->
+      <img src="assets/avatar.jpg" alt="Foto" onerror="this.style.display='none'">
+      <div>
+        <h1>Seu Nome</h1>
+        <div class="muted">Cientista de Dados • Python • ML • Visualização</div>
+        <div class="tags">
+          <span class="tag">Python</span><span class="tag">Pandas</span><span class="tag">SQL</span>
+          <span class="tag">Machine Learning</span><span class="tag">EDA</span>
+        </div>
+      </div>
+    </header>
 
-    * { box-sizing: border-box; }
+    <div class="grid">
+      <section class="card">
+        <h2>Sobre</h2>
+        <p>Sou profissional de dados focado em <strong>análise exploratória</strong>, <strong>modelagem preditiva</strong> e <strong>storytelling</strong> com dados. Gosto de transformar perguntas de negócio em soluções simples e úteis.</p>
+        <p class="muted">Disponível para freelas/colaborações.</p>
+      </section>
 
-    body {
-      font-family: Arial, sans-serif;
-      line-height: 1.6;
-      color: var(--fg);
-      background: var(--bg);
-      margin: 0;
-    }
+      <aside class="card">
+        <h2>Contato</h2>
+        <ul>
+          <li><a href="mailto:seuemail@exemplo.com">seuemail@exemplo.com</a></li>
+          <li><a href="https://www.linkedin.com/in/seu-usuario" target="_blank" rel="noopener">LinkedIn</a></li>
+          <li><a href="https://github.com/seu-usuario" target="_blank" rel="noopener">GitHub</a></li>
+          <li><a href="https://seu-usuario.github.io">Website</a></li>
+        </ul>
+      </aside>
 
-    .container {
-      max-width: 960px;
-      margin: 0 auto;
-      padding: 24px;
-    }
+      <section class="card" style="grid-column:1/-1">
+        <h2>Projetos em Destaque</h2>
+        <ul>
+          <li><a href="https://github.com/seu-usuario/projeto-olist">Análise Olist</a> — EDA, métricas e dashboards sobre e‑commerce BR.</li>
+          <li><a href="https://github.com/seu-usuario/credit-risk-ml">Risco de Crédito</a> — Pipeline de ML com validação e deploy API.</li>
+          <li><a href="https://github.com/seu-usuario/vis-covid">Visualização COVID</a> — série temporal interativa.</li>
+        </ul>
+      </section>
 
-    header {
-      margin-bottom: 20px;
-      padding-bottom: 12px;
-      border-bottom: 1px solid var(--border);
-    }
+      <section class="card">
+        <h2>Resultados da Análise</h2>
+        <p>Você pode colar aqui trechos de saída, imagens e gráficos:</p>
+        <img class="resp" src="assets/exemplo-grafico.png" alt="Gráfico exemplo">
+        <pre><code># exemplo de código
+import numpy as np
+valores = [1,2,3,1,43,4,2,3,1,4,1,6]
+print("Média:", np.mean(valores))
+        </code></pre>
+      </section>
 
-    h1 {
-      margin: 0 0 8px 0;
-      color: var(--primary);
-      font-size: 28px;
-    }
+      <section class="card">
+        <h2>Habilidades</h2>
+        <ul>
+          <li>Python (pandas, numpy, matplotlib, scikit‑learn)</li>
+          <li>SQL, modelagem e ETL</li>
+          <li>Métricas: MAE, RMSE, AUC, F1</li>
+          <li>Deploy: GitHub Pages, Streamlit, APIs</li>
+        </ul>
+      </section>
+    </div>
 
-    .subtitle {
-      margin: 0;
-      color: var(--muted);
-      font-size: 14px;
-    }
-
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(12, 1fr);
-      gap: 16px;
-    }
-
-    .card {
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: 8px;
-      padding: 16px;
-    }
-
-    .span-12 { grid-column: span 12; }
-    .span-6  { grid-column: span 6; }
-    .span-4  { grid-column: span 4; }
-
-    @media (max-width: 768px) {
-      .span-6, .span-4 { grid-column: span 12; }
-    }
-
-    h2 {
-      margin: 0 0 10px 0;
-      font-size: 20px;
-      color: var(--primary);
-    }
-
-    p { margin: 8px 0; }
-
-    ul { margin: 0 0 0 18px; }
-
-    img {
-      width: 100%;
-      height: auto;
-      display: block;
-      border-radius: 6px;
-      border: 1px solid var(--border);
-      background: #fff;
-    }
-
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      border: 1px solid var(--border);
-      border-radius: 8px;
-      overflow: hidden;
-      background: #fff;
-    }
-
-    thead th {
-      background: #f8fafc;
-      color: #111827;
-      font-weight: bold;
-      text-align: left;
-      border-bottom: 1px solid var(--border);
-      padding: 10px 12px;
-      font-size: 14px;
-    }
-
-    tbody td {
-      border-bottom: 1px solid var(--border);
-      padding: 10px 12px;
-      font-size: 14px;
-    }
-
-    tbody tr:nth-child(even) { background
+    <footer>© <span id="y"></span> Seu Nome. Feito com ♥ e GitHub Pages.</footer>
+  </div>
+  <script>document.getElementById('y').textContent = new Date().getFullYear()</script>
+</body>
+</html>
